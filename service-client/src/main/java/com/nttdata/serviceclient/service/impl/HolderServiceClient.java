@@ -17,6 +17,7 @@ public class HolderServiceClient implements HolderService {
 
     @Override
     public List<Holder> listAllHolders() {
+
         return holderRepository.findAll();
     }
 
