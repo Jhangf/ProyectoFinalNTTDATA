@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="64a6e8c0-2983-48b2-8c20-55cf59eb0d0e" name="Changes" comment="" />
+    <list default="true" id="64a6e8c0-2983-48b2-8c20-55cf59eb0d0e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../service-registry/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../service-registry/src/main/resources/bootstrap.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
