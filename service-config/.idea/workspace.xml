@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64a6e8c0-2983-48b2-8c20-55cf59eb0d0e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service-client/src/main/resources/bootstrap.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config-data/service-client.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../config-data/service-client.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../service-client/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-client/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,5 +81,16 @@
       <updated>1646196701652</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
