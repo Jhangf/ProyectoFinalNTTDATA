@@ -5,9 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64a6e8c0-2983-48b2-8c20-55cf59eb0d0e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../service-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../service-client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../service-client/src/main/java/com/nttdata/serviceclient/ProyectoFinalApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-client/src/main/java/com/nttdata/serviceclient/ProyectoFinalApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/client/CustomerClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/model/AuthorizedSigner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/model/BusinessClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/model/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/model/Holder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/model/PersonalClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-client/src/main/java/com/nttdata/serviceclient/controller/ClientRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-client/src/main/java/com/nttdata/serviceclient/controller/ClientRest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-client/src/main/java/com/nttdata/serviceclient/repository/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-client/src/main/java/com/nttdata/serviceclient/repository/ClientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-client/src/main/java/com/nttdata/serviceclient/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-client/src/main/java/com/nttdata/serviceclient/service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-client/src/main/java/com/nttdata/serviceclient/service/impl/ClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-client/src/main/java/com/nttdata/serviceclient/service/impl/ClientServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-client/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../service-client/src/main/resources/data.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-product/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/ServiceProductApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/ServiceProductApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/controller/ProductRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/controller/ProductRest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/entity/BankAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/entity/BankAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/entity/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/entity/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/repository/BankAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/repository/BankAccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/BankAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/BankAccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/impl/BankAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/impl/BankAccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/impl/TransactionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/impl/TransactionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-product/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/resources/data.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +38,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/resources/bootstrap.yml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/nttdata/config/ServiceConfigApplication.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -43,7 +67,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../service-registry" />
   </component>
   <component name="RunManager">
     <configuration name="ServiceConfigApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">

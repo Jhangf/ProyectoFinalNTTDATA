@@ -1,6 +1,8 @@
 package com.nttdata.serviceproduct.controller;
 
+import com.nttdata.serviceproduct.client.CustomerClient;
 import com.nttdata.serviceproduct.entity.*;
+import com.nttdata.serviceproduct.model.Client;
 import com.nttdata.serviceproduct.service.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -36,17 +39,34 @@ public class ProductRest {
     @Autowired
     private TypeTransactionService typeTransactionService;
 
+    //Traemos al cleinte para el listado de cuenats bancarias
+    @Autowired
+    private CustomerClient customerClient;
+
     //REST CUENTAS BANCARIAS
 
     //Listar cuentas bancarias
     @GetMapping(value = "/bankAccounts")
-    public ResponseEntity<List<BankAccount>> listBankAccounts(){
-        List<BankAccount> bankAccounts = bankAccountService.listAllBankAccount();
+    public ResponseEntity<List<BankAccount>> listBankAccounts(@RequestParam(name = "clientId", required = false) Long clientId ){
+       /* List<BankAccount> bankAccounts = bankAccountService.listAllBankAccount();
         if(bankAccounts.isEmpty()){
             return ResponseEntity.noContent().build();
         }else {
             return ResponseEntity.ok(bankAccounts);
+        }*/
+        List<BankAccount> bankAccounts = new ArrayList<>();
+        if(null==clientId){
+            bankAccounts = bankAccountService.listAllBankAccount();
+            if (bankAccounts.isEmpty()){
+                return ResponseEntity.noContent().build();
+            }
+        }else{
+            bankAccounts = bankAccountService.findBankAccountByIdClient(clientId);
+            if (bankAccounts.isEmpty()){
+                return ResponseEntity.notFound().build();
+            }
         }
+        return ResponseEntity.ok(bankAccounts);
     }
 
     //Listar una cuenta bancaria por su id
@@ -83,6 +103,16 @@ public class ProductRest {
         }else {
             return ResponseEntity.ok(ba);
         }
+    }
+
+    //Actualizar el monto total de la cuenta bancaria
+    @PutMapping (value = "/bankAccounts/{id}/amountAccount")
+    public ResponseEntity<BankAccount> updaAmountAccount(@PathVariable  Long id ,@RequestParam(name = "amount", required = true) Double amount){
+        BankAccount bankAccount = bankAccountService.updateBankAccountAmount(id,amount);
+        if (bankAccount == null){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(bankAccount);
     }
 
     @DeleteMapping(value = "/bankAccounts/{id}")

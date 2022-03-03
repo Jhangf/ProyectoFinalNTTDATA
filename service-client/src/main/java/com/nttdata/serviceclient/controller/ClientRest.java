@@ -2,23 +2,15 @@ package com.nttdata.serviceclient.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.nttdata.serviceclient.entity.AuthorizedSigner;
-import com.nttdata.serviceclient.entity.BusinessClient;
-import com.nttdata.serviceclient.entity.Holder;
-import com.nttdata.serviceclient.entity.PersonalClient;
-import com.nttdata.serviceclient.service.AuthorizedSignerService;
-import com.nttdata.serviceclient.service.BusinessClientService;
-import com.nttdata.serviceclient.service.HolderService;
-import com.nttdata.serviceclient.service.PersonalClientService;
+import com.nttdata.serviceclient.entity.*;
+import com.nttdata.serviceclient.service.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
-import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +20,9 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/clients")
 public class ClientRest {
+
+    @Autowired
+    private ClientService clientService;
 
     @Autowired
     private PersonalClientService personalClientService;
@@ -40,6 +35,30 @@ public class ClientRest {
 
     @Autowired
     private HolderService holderService;
+
+
+    //REST CLIENTES
+    //Listar todos los clientes
+    @GetMapping
+    public ResponseEntity<List<Client>> listClients(){
+        List<Client> clients = clientService.listAllClients();
+        if (clients.isEmpty()){
+            return ResponseEntity.noContent().build();
+        }else {
+            return ResponseEntity.ok(clients);
+        }
+    }
+
+    //Listar un cliente por id psado como parametro
+    @GetMapping(value = "/{id}")
+    public ResponseEntity<Client> getClient(@PathVariable Long id){
+        Client c = clientService.getClient(id);
+        if(c.getId()==null){
+            return ResponseEntity.noContent().build();
+        }else{
+            return ResponseEntity.ok(c);
+        }
+    }
 
     //REST PARA CLIENTES PERSONALES
 

@@ -1,6 +1,7 @@
 package com.nttdata.serviceproduct.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.nttdata.serviceproduct.model.Client;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -39,6 +40,7 @@ public class BankAccount {
     @Column(name = "total_amount_in_account")
     private double totalAmountInAccount;
 
+
     @Column(name = "create_at")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createAt;
@@ -48,5 +50,11 @@ public class BankAccount {
     @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
     private TypeBankAccount typeBankAccount;
 
+    //Identificador para cliente
+    @Column(name = "client_id")
+    private Long clientId;
+    //Colocamos Transient para no guardar en la base de datos
+    @Transient
+    private Client client;
 
 }
