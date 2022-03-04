@@ -113,7 +113,6 @@ public class BankAccountServiceImpl implements BankAccountService {
 
     @Override
     public List<BankAccount> findBankAccountByIdClient(Long id) {
-       // return productRepository.findByCategory(category);
         return bankAccountRepository.findBankAccountByClientId(id);
     }
 

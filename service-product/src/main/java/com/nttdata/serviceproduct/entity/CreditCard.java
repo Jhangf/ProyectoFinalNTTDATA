@@ -1,5 +1,6 @@
 package com.nttdata.serviceproduct.entity;
 
+import com.nttdata.serviceproduct.model.Client;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,7 +31,13 @@ public class CreditCard {
     @Column(name = "maximum_amount",nullable = false)
     private double maximumAmount;
 
+    @Column(name = "client_id",nullable = false)
+    private Long clientId;
+
     @Column(name = "create_at")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createAt;
+
+    @Transient
+    private Client client;
 }

@@ -54,4 +54,21 @@ public class CreditCardServiceImpl implements  CreditCardService {
             return false;
         }
     }
+
+    //Actualziacion de monto a gastar en una tarjeta
+    @Override
+    public CreditCard updateAmountCreditCard(Long id, Double moneyDeposited) {
+        CreditCard creditCard = getCreditCard(id);
+        if(creditCard.getAmountSpent()+moneyDeposited > creditCard.getMaximumAmount()){
+            return null;
+        }else {
+            creditCard.setAmountSpent(creditCard.getAmountSpent()+moneyDeposited);
+            return creditCardRepository.save(creditCard);
+        }
+    }
+
+    @Override
+    public List<CreditCard> findCreditCardByIdClient(Long id) {
+        return creditCardRepository.findCreditCardByClientId(id);
+    }
 }

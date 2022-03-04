@@ -48,12 +48,7 @@ public class ProductRest {
     //Listar cuentas bancarias
     @GetMapping(value = "/bankAccounts")
     public ResponseEntity<List<BankAccount>> listBankAccounts(@RequestParam(name = "clientId", required = false) Long clientId ){
-       /* List<BankAccount> bankAccounts = bankAccountService.listAllBankAccount();
-        if(bankAccounts.isEmpty()){
-            return ResponseEntity.noContent().build();
-        }else {
-            return ResponseEntity.ok(bankAccounts);
-        }*/
+
         List<BankAccount> bankAccounts = new ArrayList<>();
         if(null==clientId){
             bankAccounts = bankAccountService.listAllBankAccount();
@@ -128,13 +123,21 @@ public class ProductRest {
 
     //Listar tarjetas de credito
     @GetMapping(value = "/creditCards")
-    public ResponseEntity<List<CreditCard>> listCreditCards(){
-        List<CreditCard> creditCards = creditCardService.listAllCreditCards();
-        if(creditCards.isEmpty()){
-            return ResponseEntity.noContent().build();
-        }else {
-            return ResponseEntity.ok(creditCards);
+    public ResponseEntity<List<CreditCard>> listCreditCards(@RequestParam(name = "clientId", required = false) Long clientId){
+
+        List<CreditCard> creditCards = new ArrayList<>();
+        if(null==clientId){
+            creditCards = creditCardService.listAllCreditCards();
+            if (creditCards.isEmpty()){
+                return ResponseEntity.noContent().build();
+            }
+        }else{
+            creditCards = creditCardService.findCreditCardByIdClient(clientId);
+            if (creditCards.isEmpty()){
+                return ResponseEntity.notFound().build();
+            }
         }
+        return ResponseEntity.ok(creditCards);
     }
 
     //Listar una atrjeta de credito por su id
@@ -179,6 +182,16 @@ public class ProductRest {
             return ResponseEntity.ok(new CreditCard());
         }else {
             return   ResponseEntity.badRequest().build();
+        }
+    }
+
+    @PutMapping(value = "/creditCards/{id}/{money}")
+    public ResponseEntity<CreditCard> updateAmountCreditCard(@PathVariable Long id, @PathVariable Double money){
+        CreditCard cc = creditCardService.updateAmountCreditCard(id,money);
+        if (cc.getId()==null){
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(new CreditCard());
+        }else {
+            return ResponseEntity.ok(cc);
         }
     }
 

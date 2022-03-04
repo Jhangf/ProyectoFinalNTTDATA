@@ -1,6 +1,8 @@
 package com.nttdata.serviceproduct.service;
 
+import com.nttdata.serviceproduct.entity.BankAccount;
 import com.nttdata.serviceproduct.entity.CreditCard;
+import com.nttdata.serviceproduct.entity.Transaction;
 
 import java.util.List;
 
@@ -20,4 +22,10 @@ public interface CreditCardService {
 
     //Eliminar tarjeta de credito
     public boolean deleteCreditCard(Long id);
+
+    //Actualizar el dienro en la tarjeta
+    public CreditCard updateAmountCreditCard(Long id, Double moneyDeposited );
+
+    //Obtener tarjetas de credito por id del clietne
+    public  List<CreditCard> findCreditCardByIdClient(Long id);
 }

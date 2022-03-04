@@ -15,8 +15,8 @@ VALUES(3,'659874569856320123650',false,0,true,30,true,0,'1990-02-02',3,3);
 INSERT INTO tbl_type_transactions (id,name,create_at) VALUES(1,'Deposito','1990-02-02');
 INSERT INTO tbl_type_transactions (id,name,create_at) VALUES(2,'Retiro','1990-02-02');
 
-INSERT INTO tbl_credits_cards (id,account_number,amount_spent,expiration_date,maximum_amount,create_at)
-VALUES (1,'4569878963520125',122.3,'2024-02-02',1200.0,'1990-02-02');
+INSERT INTO tbl_credits_cards (id,account_number,amount_spent,expiration_date,maximum_amount,client_id,create_at)
+VALUES (1,'4569878963520125',122.3,'2024-02-02',1200.0,1,NOW());
 
 
 
