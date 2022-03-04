@@ -21,4 +21,7 @@ public interface TransactionService {
 
     //Eliminar una transaccion
     public boolean deleteTransaction(Long id);
+
+    //obtener las transacciones por la cuenta bancaria de un cliente
+    public List<Transaction> findTransactionsByBankAccountId(Long id);
 }

@@ -118,4 +118,9 @@ public class TransactionServiceImpl implements TransactionService {
             return false;
         }
     }
+
+    @Override
+    public List<Transaction> findTransactionsByBankAccountId(Long id) {
+        return transactionRepository.findTransactionByBankAccountId(id);
+    }
 }

@@ -376,13 +376,20 @@ public class ProductRest {
 
     //Listar  todas las transacciones
     @GetMapping(value = "/transactions")
-    public ResponseEntity<List<Transaction>> listTransactions(){
-        List<Transaction> transaction = transactionService.listAllTransactions();
-        if(transaction.isEmpty()){
-            return ResponseEntity.noContent().build();
-        }else {
-            return ResponseEntity.ok(transaction);
+    public ResponseEntity<List<Transaction>> listTransactions(@RequestParam(name = "bankAccountId", required = false) Long bankAccountId){
+        List<Transaction> transactions = new ArrayList<>();
+        if(null==bankAccountId){
+            transactions = transactionService.listAllTransactions();
+            if (transactions.isEmpty()){
+                return ResponseEntity.noContent().build();
+            }
+        }else{
+            transactions = transactionService.findTransactionsByBankAccountId(bankAccountId);
+            if (transactions.isEmpty()){
+                return ResponseEntity.notFound().build();
+            }
         }
+        return ResponseEntity.ok(transactions);
     }
 
     //Listar  una transaccion por su id

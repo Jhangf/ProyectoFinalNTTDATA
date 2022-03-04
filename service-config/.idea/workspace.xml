@@ -7,12 +7,9 @@
     <list default="true" id="64a6e8c0-2983-48b2-8c20-55cf59eb0d0e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/controller/ProductRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/controller/ProductRest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/entity/CreditCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/entity/CreditCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/repository/CreditCardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/repository/CreditCardRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/CreditCardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/CreditCardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/impl/BankAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/impl/BankAccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/impl/CreditCardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/impl/CreditCardServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../service-product/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/repository/TransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/repository/TransactionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/TransactionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/impl/TransactionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/impl/TransactionServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +50,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../service-registry" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration name="ServiceConfigApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
