@@ -58,15 +58,13 @@ public class BankAccountServiceImpl implements BankAccountService {
         //Verificamos si existe una cuenta a plazao fijo para podr agegar otra
         list.stream().forEach(p->{if(p.getTypeBankAccount().getId()==3) {n.getAndIncrement();}});
 
-        //Obtenemos el cliente de tipo Pesonal registrado
-        PersonalClient personalClient = customerClient.getPersonalClientByIdClient(bankAccount.getClientId()).getBody();
-        //BusinessClient businessClient = customerClient.getBusinessClient(bankAccount.getClientId()).getBody();
-
-            if( x==0){
+        //Obtenemos el tipo de cliente que es
+        Client client = customerClient.getClient(bankAccount.getClientId()).getBody();
+            if( x==0 && client.getTypeClient()==1){
                 return bankAccountRepository.save(bankAccount);
-            }else if( n.get() >0 && bankAccount.getTypeBankAccount().getId()==3){
+            }else if( n.get() >0 && bankAccount.getTypeBankAccount().getId()==3 && client.getTypeClient()==1){
                 return bankAccountRepository.save(bankAccount);
-            }else if(personalClient.getId()==null && bankAccount.getTypeBankAccount().getId()==2){
+            }else if(client.getTypeClient()==2 && bankAccount.getTypeBankAccount().getId()==2){
                 return bankAccountRepository.save(bankAccount);
             } else return null;
     }

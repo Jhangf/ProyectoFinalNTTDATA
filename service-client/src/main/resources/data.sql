@@ -1,6 +1,6 @@
 INSERT INTO tbl_clients (id,type_client) VALUES (1,1);
-INSERT INTO tbl_clients (id,type_client) VALUES (2,2);
-INSERT INTO tbl_clients (id,type_client) VALUES (3,2);
+INSERT INTO tbl_clients (id,type_client) VALUES (2,1);
+INSERT INTO tbl_clients (id,type_client) VALUES (3,1);
 INSERT INTO tbl_clients (id,type_client) VALUES (4,2);
 
 INSERT INTO tbl_personals_clients (id,first_name,last_name,document_type,document_number,phone,birthday,created_at,client_id)
