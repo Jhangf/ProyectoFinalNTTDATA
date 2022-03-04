@@ -54,4 +54,9 @@ public class BusinessClientServiceImpl implements BusinessClientService {
             return false;
         }
     }
+
+    @Override
+    public BusinessClient getBusinessClientByIdClient(Long id) {
+        return businessClientRepository.findClientBusiness(id);
+    }
 }

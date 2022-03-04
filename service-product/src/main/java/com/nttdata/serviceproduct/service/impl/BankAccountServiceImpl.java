@@ -2,6 +2,7 @@ package com.nttdata.serviceproduct.service.impl;
 
 import com.nttdata.serviceproduct.client.CustomerClient;
 import com.nttdata.serviceproduct.entity.BankAccount;
+import com.nttdata.serviceproduct.model.BusinessClient;
 import com.nttdata.serviceproduct.model.Client;
 import com.nttdata.serviceproduct.model.PersonalClient;
 import com.nttdata.serviceproduct.repository.BankAccountRepository;
@@ -47,7 +48,7 @@ public class BankAccountServiceImpl implements BankAccountService {
         //Obtener el id del cliente a guardar su cuenta
         Long id = bankAccount.getClientId();
         AtomicInteger n= new AtomicInteger();
-
+        bankAccount.setCreateAt(new Date()); //guardar fecha actual
         //Buscamos sus cuentas registradas
         List<BankAccount> list = findBankAccountByIdClient(id);
 
@@ -58,23 +59,16 @@ public class BankAccountServiceImpl implements BankAccountService {
         list.stream().forEach(p->{if(p.getTypeBankAccount().getId()==3) {n.getAndIncrement();}});
 
         //Obtenemos el cliente de tipo Pesonal registrado
-        PersonalClient personalClient = customerClient.getPersonalClient(bankAccount.getClientId()).getBody();
+        PersonalClient personalClient = customerClient.getPersonalClientByIdClient(bankAccount.getClientId()).getBody();
+        //BusinessClient businessClient = customerClient.getBusinessClient(bankAccount.getClientId()).getBody();
 
-        bankAccount.setCreateAt(new Date()); //guardar fecha actual
-        if (personalClient!=null){
             if( x==0){
                 return bankAccountRepository.save(bankAccount);
             }else if( n.get() >0 && bankAccount.getTypeBankAccount().getId()==3){
                 return bankAccountRepository.save(bankAccount);
-            }
-            else{
-                return null; //Algo Informativo
-            }
-        }else {
-            if(bankAccount.getTypeBankAccount().getId()==2){
+            }else if(personalClient.getId()==null && bankAccount.getTypeBankAccount().getId()==2){
                 return bankAccountRepository.save(bankAccount);
-            }else return null; //Algo informativo
-        }
+            } else return null;
     }
 
     @Override

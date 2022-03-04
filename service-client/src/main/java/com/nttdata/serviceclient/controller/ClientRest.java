@@ -73,10 +73,21 @@ public class ClientRest {
         }
     }
 
-    //Listar un cliente por id psado como parametro
+    //Listar un cliente personal por id psado como parametro
     @GetMapping(value = "/personals/{id}")
     public ResponseEntity<PersonalClient> getPersonalClient(@PathVariable Long id){
         PersonalClient pc = personalClientService.getPersonalClient(id);
+        if(pc.getId()==null){
+            return ResponseEntity.noContent().build();
+        }else{
+            return ResponseEntity.ok(pc);
+        }
+    }
+
+    //Listar un cliente personal por id del cliente
+    @GetMapping(value = "/personals/clientId/{id}")
+    public ResponseEntity<PersonalClient> getPersonalClientByIdClient(@PathVariable Long id){
+        PersonalClient pc = personalClientService.getPersonalClientByIdClient(id);
         if(pc.getId()==null){
             return ResponseEntity.noContent().build();
         }else{
@@ -134,6 +145,16 @@ public class ClientRest {
     @GetMapping(value = "/business/{id}")
     public ResponseEntity<BusinessClient> getBusinessClient(@PathVariable Long id){
         BusinessClient bc = businessClientService.getBusinessClient(id);
+        if(bc.getId()==null){
+            return ResponseEntity.noContent().build();
+        }else{
+            return ResponseEntity.ok(bc);
+        }
+    }
+    //Listar un cliente Empresarial por id del clietne psado como parametro
+    @GetMapping(value = "/business/clientId/{id}")
+    public ResponseEntity<BusinessClient> getBusinessClientFindIdClient(@PathVariable Long id){
+        BusinessClient bc = businessClientService.getBusinessClientByIdClient(id);
         if(bc.getId()==null){
             return ResponseEntity.noContent().build();
         }else{

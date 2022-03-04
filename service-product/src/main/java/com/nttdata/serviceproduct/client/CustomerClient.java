@@ -1,5 +1,6 @@
 package com.nttdata.serviceproduct.client;
 
+import com.nttdata.serviceproduct.model.BusinessClient;
 import com.nttdata.serviceproduct.model.Client;
 import com.nttdata.serviceproduct.model.PersonalClient;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -16,7 +17,11 @@ public interface CustomerClient {
     public ResponseEntity<Client> getClient(@PathVariable Long id);
 
     // Listar un cliente Personal
-    @GetMapping(value = "/personals/{id}")
-    public ResponseEntity<PersonalClient> getPersonalClient(@PathVariable Long id);
+    @GetMapping(value = "/personals/clientId/{id}")
+    public ResponseEntity<PersonalClient> getPersonalClientByIdClient(@PathVariable Long id);
+
+    //Listar un clietne empresarial
+    @GetMapping(value = "/business/clientId/{id}")
+    public ResponseEntity<BusinessClient> getBusinessClient(@PathVariable Long id);
 
 }

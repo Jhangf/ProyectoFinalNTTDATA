@@ -1,6 +1,7 @@
 package com.nttdata.serviceproduct.service.impl;
 
 import com.nttdata.serviceproduct.client.CustomerClient;
+import com.nttdata.serviceproduct.entity.BankAccount;
 import com.nttdata.serviceproduct.entity.Transaction;
 import com.nttdata.serviceproduct.repository.BankAccountRepository;
 import com.nttdata.serviceproduct.repository.TransactionRepository;
@@ -46,13 +47,53 @@ public class TransactionServiceImpl implements TransactionService {
     @Override
     public Transaction saveTransaction(Transaction transaction) {
         transaction.setCreateAt(new Date());
-        double monto = transaction.getAmount(); //obtenemops el monto de la transaccion el cual actualziara la cuenta bancaria
+
+        //obtenemos el monto de la transaccion el cual actualziara la cuenta bancaria
+        double monto = transaction.getAmount();
+        //Obtenemos los datos del numero de cuenta en los que se quiere actualziar sus datos
+        BankAccount bankAccount = bankAccountService.getBankAccount(transaction.getBankAccount().getId());
         if(transaction.getTypeTransaction().getId()==1){
+            if (bankAccount.getTypeBankAccount().getId()==1){
+                if (bankAccount.getNumberMoves()==0){
+                    return null; //Cuenta llega a limite de movimientos
+                }else {
+                    bankAccount.setNumberMoves(bankAccount.getNumberMoves()-1);
+                    bankAccountService.updateBankAccount(transaction.getBankAccount().getId(),bankAccount);
+                }
+            }else if (bankAccount.getTypeBankAccount().getId()==3)
+            {
+                if (!bankAccount.isWithdrawalOrDeposit()){
+                    return null; //
+                }else {
+                    bankAccount.setWithdrawalOrDeposit(false);
+                    bankAccountService.updateBankAccount(transaction.getBankAccount().getId(),bankAccount);
+                }
+            }
             //En este caso la transaccion es de tipo DEPOSITO, sumamos
             bankAccountService.updateBankAccountAmount(transaction.getBankAccount().getId(),monto);
         }else {
-            //En este caso la transaccion es de Tipo Retiro entonces restamos
-            bankAccountService.updateBankAccountAmount(transaction.getBankAccount().getId(),monto*-1);
+            if(bankAccount.getTotalAmountInAccount()-monto<=0){
+                return null;
+            }else {
+                if (bankAccount.getTypeBankAccount().getId()==1){
+                    if (bankAccount.getNumberMoves()==0){
+                        return null; //Cuenta llega a limite de movimientos
+                    }else {
+                        bankAccount.setNumberMoves(bankAccount.getNumberMoves()-1);
+                        bankAccountService.updateBankAccount(transaction.getBankAccount().getId(),bankAccount);
+                    }
+                }else if (bankAccount.getTypeBankAccount().getId()==3)
+                {
+                    if (!bankAccount.isWithdrawalOrDeposit()){
+                        return null; //
+                    }else {
+                        bankAccount.setWithdrawalOrDeposit(false);
+                        bankAccountService.updateBankAccount(transaction.getBankAccount().getId(),bankAccount);
+                    }
+                }
+                //En este caso la transaccion es de Tipo Retiro entonces restamos
+                bankAccountService.updateBankAccountAmount(transaction.getBankAccount().getId(),monto*-1);
+            }
         }
         return transactionRepository.save(transaction);
     }

@@ -62,4 +62,9 @@ public class PersonalClientServiceImpl implements PersonalClientService {
             return false;
         }
     }
+
+    @Override
+    public PersonalClient getPersonalClientByIdClient(Long id) {
+        return personalClientRepository.findClientPersonal(id);
+    }
 }

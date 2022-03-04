@@ -20,4 +20,7 @@ public interface PersonalClientService {
 
     //Eliminar Cliente tipo Personal
     public boolean deletePersonalClient(Long id);
+
+    //Otener un cliente Personal por id del cliente
+    public PersonalClient getPersonalClientByIdClient(Long id);
 }

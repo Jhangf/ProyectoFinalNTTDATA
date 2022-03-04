@@ -1,6 +1,7 @@
 package com.nttdata.serviceclient.service;
 
 import com.nttdata.serviceclient.entity.BusinessClient;
+import com.nttdata.serviceclient.entity.PersonalClient;
 
 import java.util.List;
 
@@ -20,4 +21,7 @@ public interface BusinessClientService {
 
     //Eliminar cliente Empresarial
     public boolean deleteBusinessClient(Long id);
+
+    //Otener un cliente empresarial por id del cliente
+    public BusinessClient getBusinessClientByIdClient(Long id);
 }

@@ -15,6 +15,7 @@ public class CreditPaymentServiceImpl implements CreditPaymentService {
     CreditPaymentRepository creditPaymentRepository;
     @Override
     public List<CreditPayment> listAllCreditPayments() {
+
         return creditPaymentRepository.findAll();
     }
 
@@ -41,9 +42,7 @@ public class CreditPaymentServiceImpl implements CreditPaymentService {
             cp.setPaymentDate(creditPayment.getPaymentDate());
             return creditPaymentRepository.save(cp);
         }
-
     }
-
     @Override
     public boolean deleteCreditPayment(Long id) {
         try{
