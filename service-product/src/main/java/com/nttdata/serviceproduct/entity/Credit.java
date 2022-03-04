@@ -30,6 +30,9 @@ public class Credit {
     @Column(name = "interest",nullable = false)
     private double interest;
 
+    @Column(name = "cliet_id",nullable = false)
+    private Long clientId;
+
     @Column(name = "create_at")
     @Temporal(TemporalType.TIMESTAMP)
     private Date createAt;
