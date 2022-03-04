@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="64a6e8c0-2983-48b2-8c20-55cf59eb0d0e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/controller/ProductRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/controller/ProductRest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/repository/TransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/repository/TransactionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/TransactionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/impl/TransactionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/service/impl/TransactionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-product/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/ServiceProductApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../service-product/src/main/java/com/nttdata/serviceproduct/ServiceProductApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
